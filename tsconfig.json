@@ -1,0 +1,24 @@
+{
+  // See https://www.typescriptlang.org/tsconfig for more information and
+  // https://github.com/tsconfig/bases/blob/main/README.md for a list of tsconfig bases.
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": [2023],
+    "module": "commonjs",
+    "moduleResolution": "node16",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true
+    // OPTIONAL
+    // These are options I tend to turn on in my projects, but are not required.
+    // "noUnusedParameters": true /* Raise an error when a function parameter isn't read. */,
+    // "jsx": "preserve",                                /* Specify what JSX code is generated. */
+    // "allowUnusedLabels": true,                        /* Disable error reporting for unused labels. */
+    // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "build", "dist"]
+}
