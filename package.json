@@ -3,10 +3,40 @@
   "version": "1.0.0",
   "description": "boilderplate for typescript",
   "main": "src/index.ts",
-  "keywords": ["typescript", "boilderplate"],
+  "keywords": [
+    "typescript",
+    "boilderplate"
+  ],
   "author": "Robin Mayfield <robin@degu.io>",
   "license": "MIT",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.2",
+    "prettier": "3.2.5",
     "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "lint": "eslint . --fix",
+    "lint:ci": "eslint . --check",
+    "format": "prettier . --write",
+    "format:ci": "prettier --check.",
+    "type-check": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint . --fix",
+      "prettier . --write --ignore-unknown"
+    ]
   }
 }
