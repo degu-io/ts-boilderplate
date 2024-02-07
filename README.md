@@ -6,6 +6,7 @@ This is an opinionated boilerplate for creating a TypeScript project. It include
 - [TypeScript](https://www.typescriptlang.org/)
 - [ESLint](https://eslint.org/docs/latest/use/getting-started)
 - [Prettier](https://prettier.io/docs/en/install.html)
+- [Vitest](https://vitejs.dev/guide/)
 
 It's opinionated in the sense that it includes a set of tools that I find useful for my own projects. You can use this as a starting point for your own projects, or you can use it as a reference.
 
