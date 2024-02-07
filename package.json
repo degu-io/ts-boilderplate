@@ -21,10 +21,10 @@
   },
   "scripts": {
     "prepare": "husky",
-    "lint": "eslint . --fix",
-    "lint:ci": "eslint . --check",
-    "format": "prettier . --write",
-    "format:ci": "prettier --check.",
+    "lint": "eslint --fix .",
+    "lint:ci": "eslint --check .",
+    "format": "prettier --write .",
+    "format:ci": "prettier --check .",
     "type-check": "tsc --noEmit",
     "build": "tsc"
   },
@@ -35,7 +35,7 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
-      "eslint . --fix",
+      "eslint --fix .",
       "prettier . --write --ignore-unknown"
     ]
   }
