@@ -2,14 +2,16 @@
   "name": "ts-boilderplate",
   "version": "1.0.0",
   "description": "boilderplate for typescript",
-  "main": "src/index.ts",
   "keywords": [
     "typescript",
     "boilderplate"
   ],
   "author": "Robin Mayfield <robin@degu.io>",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
+    "@tsconfig/node20": "^20.1.2",
+    "@types/node": "^20.11.16",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "@vitest/ui": "latest",
@@ -17,9 +19,10 @@
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.0.10",
     "lint-staged": "^15.2.2",
+    "msw": "^2.1.7",
     "prettier": "3.2.5",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
-    "vite": "latest",
     "vitest": "latest"
   },
   "scripts": {

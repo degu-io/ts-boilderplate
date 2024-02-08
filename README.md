@@ -7,6 +7,7 @@ This is an opinionated boilerplate for creating a TypeScript project. It include
 - [ESLint](https://eslint.org/docs/latest/use/getting-started)
 - [Prettier](https://prettier.io/docs/en/install.html)
 - [Vitest](https://vitejs.dev/guide/)
+- [MSW](https://mswjs.io)
 
 It's opinionated in the sense that it includes a set of tools that I find useful for my own projects. You can use this as a starting point for your own projects, or you can use it as a reference.
 
@@ -68,6 +69,24 @@ Following the [Prettier install docs](https://prettier.io/docs/en/install.html) 
 
 Also, we've added `husky` and `lint-staged` to run Prettier on staged files. These tools are a godsend ensuring all commits are suitably formatted and linted.
 
+## Vitest
+
+The choice to use `vitest` is due to it's speed, ease of use and similarity to [Jest](https://jestjs.io/). Generally, it is very quick to set up an run. Though it can sometimes trip up the developer with some of the configuration. Once in place it is a good test framework to work with.
+
+Note the use of `globals: true` in the `vitest.config.ts` and `"types": ['vitest/global']` in `tsconfig.json`. This allows global use of
+basic test methods, such as `describe`, `expect`, etc.
+
+There is also a very powerful `vitest ui` function that gives a report in the browser with some helpful features.
+
+## MSW
+
+Who doesn't love a good mock?
+
+[Mock Service Worker](https://mswjs.io) provides a fairly painless network mocking mechanism that plays nicely
+with Vitest. It alerts in the test if it finds an unhandled network call.
+
+We have set up a separate directory for the `msw` server and handlers so that code can be reused across tests.
+
 ## A note on `.editorconfig`
 
 [EditorConfig](https://editorconfig.org/) is a useful tool (read the docs). However, I have excluded it from this boilerplate as it can conflict with Prettier and ESLint. Usage should be agreed at a team/contributor level.
@@ -106,6 +125,20 @@ pnpm add --save-dev husky lint-staged
 Follow the [Prettier install docs](https://prettier.io/docs/en/install.html) to install Prettier and the ESLint plugin.
 As well as a guide to installing `husky` and `lint-staged`.
 
+### `vitest`
+
+```bash
+pnpm add --save-dev vitest @vitest/ui
+```
+
+See the `vitest.config.ts` for configuration suggestions.
+
+### `msw`
+
+```bash
+pnpm add --save-dev msw
+```
+
 ## Resources
 
 - [`pnpm`](https://pnpm.io)
@@ -113,6 +146,8 @@ As well as a guide to installing `husky` and `lint-staged`.
 - [ESLint](https://eslint.org/docs/latest/use/getting-started)
 - [Prettier](https://prettier.io/docs/en/install.html)
 - [Husky](https://typicode.github.io/husky/#/)
-- [Lint-Staged](https://)
+- [Lint-Staged](https://github.com/lint-staged/lint-staged)
+- [Vitest](https://vitejs.dev/guide/)
+- [MSW](https://mswjs.io)
 
 I have found [Matt Pocock's](https://github.com/mattpocock) [videos](https://youtu.be/eh89VE3Mk5g?t=38) to be very helpful in understanding the `tsconfig.json` file and many other aspects of TS.

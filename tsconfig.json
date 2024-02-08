@@ -1,17 +1,17 @@
 {
   // See https://www.typescriptlang.org/tsconfig for more information and
   // https://github.com/tsconfig/bases/blob/main/README.md for a list of tsconfig bases.
+  // "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "target": "es2016",
-    "lib": [2023],
-    "module": "commonjs",
-    "moduleResolution": "node16",
+    "target": "ESNext",
+    "module": "es2015",
+    "moduleResolution": "bundler", // this is to allow resolution of modules with suffixes like .ts
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "noEmit": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "types": ["vitest/globals"]
     // OPTIONAL
     // These are options I tend to turn on in my projects, but are not required.
     // "noUnusedParameters": true /* Raise an error when a function parameter isn't read. */,
@@ -19,6 +19,6 @@
     // "allowUnusedLabels": true,                        /* Disable error reporting for unused labels. */
     // "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "test/**/*.ts", "test/**/*.tsx"],
-  "exclude": ["node_modules", "build", "dist"]
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["node_modules"]
 }
